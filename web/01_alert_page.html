@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>selenium test 페이지</title>
+  </head>
+  <body>
+    <h2>Selenium Alert Test</h2>
+    <p>Click the simple alert button.</p>
+    <button onclick="simpleAlert()" id="simpleAlert">simpleAlert</button>
+
+    <p>Click the confirmAlert button</p>
+    <button onclick="confirmAlert()" id="confirmAlert">confirmAlert</button>
+    <p id="confirmMemo"></p>
+
+    <p>Click the promptAlert button</p>
+    <button onclick="promptAlert()" id="promptAlert">promptAlert</button>
+    <p id="promptMemo"></p>
+
+
+  <script>
+    function simpleAlert(){
+    alert("simpleAlert button");
+    }
+
+    function confirmAlert(){
+    var txt;
+    if (confirm("Press a button!")) {
+      txt = "You pressed OK!";
+    } else {
+      txt = "You pressed Cancel!";
+    }
+    document.getElementById("confirmMemo").innerHTML = txt;
+    }
+
+    function promptAlert(){
+      var txt;
+      var person = prompt("Please enter your name : ", "Jay");
+      if(person == null || person == ""){
+        txt = "User cancelled the prompt";
+      }else{
+        txt = "Hello " + person + "! How are you today?";
+      }
+      document.getElementById("promptMemo").innerHTML = txt;
+    }
+  </script>
+  </body>
+</html>
