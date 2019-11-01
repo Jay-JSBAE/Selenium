@@ -15,7 +15,7 @@ class SelectTest1 (unittest.TestCase):
         dropdown = Select(driver.find_element_by_name("cars"))
         self.assertEqual(4,len(dropdown.options))
 
-        #각각의 리스트 확인
+        # 각각의 리스트 확인
         dropdown.select_by_visible_text("Volvo")
         self.assertEqual("Volvo",dropdown.first_selected_option.text)
         time.sleep(2)
@@ -28,7 +28,7 @@ class SelectTest1 (unittest.TestCase):
         self.assertEqual("Fiat",dropdown.first_selected_option.text)
         time.sleep(2)
 
-        #전체 리스트 확인
+        # 전체 리스트 확인
         exp_options = [ "Volvo", "Saab", "Fiat", "Audi"]
         act_options = []
 
